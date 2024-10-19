@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        div{
+            text-align: center;
+            background-color: white;
+            padding: 20px;  
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #counterButton{
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #counterButton:hover{
+            background-color: #45a049;
+        }
+
+        #numberType{
+            display: block;
+            margin: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="counterButton">Count One: </button>
+        <span id="numberType">Even</span>
+    </div>
+    <script>
+        let count=0;
+        document.getElementById('counterButton').addEventListener('click',function(){
+            count++;
+            this.textContent="Count One: "+count;
+
+            if(count%2 ==0)
+            {
+                document.getElementById('numberType').textContent='Even';
+            }
+            else{
+                document.getElementById('numberType').textContent='Odd';
+            }
+        })
+    </script>
+</body>
+</html>
